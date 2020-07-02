@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = ".;catalog";
+
+package catalog;
+
+// Structure for site navigation's item.
+message NavigationItem {
+  string id = 1;
+  string name = 2;
+  string link = 3;
+  repeated NavigationItem items = 4;
+}
+
+message GetNavigationItemsRequest {}
+message GetNavigationItemsResponse {
+  repeated NavigationItem navigation = 1;
+}
+
+service CatalogService {
+  rpc GetNavigationItems(GetNavigationItemsRequest) returns (GetNavigationItemsResponse) {}
+}

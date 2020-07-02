@@ -1,0 +1,14 @@
+{
+  "catalog": {
+    "host": "127.0.0.1",
+    "port": 5002
+  },
+  "database": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "user": "postgres",
+    "pass": "postgres",
+    "name": "catalog"
+  }
+}
+
