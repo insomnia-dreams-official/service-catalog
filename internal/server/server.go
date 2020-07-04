@@ -1,8 +1,11 @@
 package server
 
 import (
+	"database/sql"
 	"fmt"
-	gserverimpl "github.com/insomnia-dreams-official/service-catalog/internal/grpc/server"
+	"github.com/insomnia-dreams-official/service-catalog/internal/delivery_grpc"
+	"github.com/insomnia-dreams-official/service-catalog/internal/repo_postgres"
+	"github.com/insomnia-dreams-official/service-catalog/internal/ucase"
 	"github.com/spf13/viper"
 	"google.golang.org/grpc"
 	"log"
@@ -42,19 +45,31 @@ func init() {
 	}
 }
 
-func New() Server {
+// New function create all repositories, usecases and inject them in our implementation of grpc server;
+// to call them (usecases) in grpc methods
+func New(db *sql.DB) Server {
 	grpcServer := grpc.NewServer()
-	gserverimpl.Register(grpcServer)
+
+	// Create repositories
+	categoryRepo := repo_postgres.NewCategoryRepo(db)
+
+	// Create usecases
+	navigationUcase := ucase.NewNavigationUcase(categoryRepo)
+
+	// Inject ucases in out grpc server
+	delivery_grpc.Register(grpcServer, navigationUcase)
 	return Server{grpcServer}
 }
 
 func (s *Server) Run() {
+	// Create tcp listener for grpc dial
 	address := fmt.Sprintf("%s:%s", viper.GetString(`catalog.host`), viper.GetString(`catalog.port`))
 	lis, err := net.Listen("tcp", address)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	// run grpc-server
+
+	// Run grpc-server
 	if err := s.grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}

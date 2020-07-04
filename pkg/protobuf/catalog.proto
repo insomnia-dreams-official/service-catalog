@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-option go_package = ".;catalog";
+option go_package = ".;protobuf";
 
-package catalog;
+package protobuf;
 
 // Structure for site navigation's item.
 message NavigationItem {
@@ -14,9 +14,9 @@ message NavigationItem {
 
 message GetNavigationItemsRequest {}
 message GetNavigationItemsResponse {
-  repeated NavigationItem navigation = 1;
+  repeated NavigationItem navigation_items = 1;
 }
 
-service CatalogService {
+service Catalog {
   rpc GetNavigationItems(GetNavigationItemsRequest) returns (GetNavigationItemsResponse) {}
 }
