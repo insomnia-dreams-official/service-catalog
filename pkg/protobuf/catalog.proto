@@ -31,8 +31,16 @@ message GetRootcategoriesResponse {
   repeated Category rootcategories = 1;
 }
 
+message GetCategoryChildsRequest {
+  string link = 1;
+}
+message GetCategoryChildsResponse {
+  repeated Category categoryChilds = 1;
+}
+
 
 service Catalog {
   rpc GetNavigationItems(GetNavigationItemsRequest) returns (GetNavigationItemsResponse) {}
   rpc GetRootcategories(GetRootcategoriesRequest) returns (GetRootcategoriesResponse) {}
+  rpc GetCategoryChilds(GetCategoryChildsRequest) returns (GetCategoryChildsResponse) {}
 }

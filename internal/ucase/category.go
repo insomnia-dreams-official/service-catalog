@@ -23,3 +23,12 @@ func (u *categoryUcase) GetRootcategories() ([]*catalog.Category, error) {
 	return rootcategories, nil
 }
 
+// GetRootcategories returns direct childs of given link's category
+func (u *categoryUcase) GetCategoryChilds(link string) ([]*catalog.Category, error) {
+	categoryChilds, err := u.categoryRepo.GetCategoryChilds(link)
+	if err != nil {
+		return nil, err
+	}
+	return categoryChilds, nil
+}
+

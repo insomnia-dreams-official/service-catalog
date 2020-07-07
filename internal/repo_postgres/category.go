@@ -76,3 +76,34 @@ func (r *categoryRepository) GetRootcategories() ([]*catalog.Category, error) {
 	return categories, nil
 }
 
+// GetCategoryChilds method returns returns direct childs of given link's category
+func (r *categoryRepository) GetCategoryChilds(link string) ([]*catalog.Category, error) {
+	var categories []*catalog.Category
+
+	rows, err := r.db.Query(`
+		SELECT *
+		FROM category
+		WHERE path SIMILAR TO
+      		(SELECT path FROM category WHERE link=$1) || '(.)\d*';
+	`, link)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		c := catalog.Category{}
+		err := rows.Scan(&c.Articul, &c.Name, &c.Path, &c.Link, &c.FullLink)
+		if err != nil {
+			return nil, err
+		}
+		categories = append(categories, &c)
+	}
+
+	err = rows.Err()
+	if err != nil {
+		return nil, err
+	}
+
+	return categories, nil
+}
