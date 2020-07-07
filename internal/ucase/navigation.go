@@ -15,7 +15,7 @@ func NewNavigationUcase(categoryRepo catalog.CategoryRepo) *navigationUcase {
 	}
 }
 
-// navigationUcase.GetItems return navigation items corresponding to:
+// GetItems return navigation items corresponding to:
 // - manually hard-coded pages
 // - category pages
 func (u *navigationUcase) GetItems() ([]*catalog.NavigationItem, error) {

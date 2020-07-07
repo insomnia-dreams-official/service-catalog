@@ -186,6 +186,171 @@ func (x *GetNavigationItemsResponse) GetNavigationItems() []*NavigationItem {
 	return nil
 }
 
+// Structure for site category; category is an attribute of every product
+type Category struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Articul  string `protobuf:"bytes,1,opt,name=articul,proto3" json:"articul,omitempty"`
+	Name     string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Path     string `protobuf:"bytes,3,opt,name=path,proto3" json:"path,omitempty"`
+	Link     string `protobuf:"bytes,4,opt,name=link,proto3" json:"link,omitempty"`
+	FullLink string `protobuf:"bytes,5,opt,name=full_link,json=fullLink,proto3" json:"full_link,omitempty"`
+}
+
+func (x *Category) Reset() {
+	*x = Category{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pkg_protobuf_catalog_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Category) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Category) ProtoMessage() {}
+
+func (x *Category) ProtoReflect() protoreflect.Message {
+	mi := &file_pkg_protobuf_catalog_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Category.ProtoReflect.Descriptor instead.
+func (*Category) Descriptor() ([]byte, []int) {
+	return file_pkg_protobuf_catalog_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *Category) GetArticul() string {
+	if x != nil {
+		return x.Articul
+	}
+	return ""
+}
+
+func (x *Category) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Category) GetPath() string {
+	if x != nil {
+		return x.Path
+	}
+	return ""
+}
+
+func (x *Category) GetLink() string {
+	if x != nil {
+		return x.Link
+	}
+	return ""
+}
+
+func (x *Category) GetFullLink() string {
+	if x != nil {
+		return x.FullLink
+	}
+	return ""
+}
+
+type GetRootcategoriesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *GetRootcategoriesRequest) Reset() {
+	*x = GetRootcategoriesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pkg_protobuf_catalog_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetRootcategoriesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRootcategoriesRequest) ProtoMessage() {}
+
+func (x *GetRootcategoriesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_pkg_protobuf_catalog_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRootcategoriesRequest.ProtoReflect.Descriptor instead.
+func (*GetRootcategoriesRequest) Descriptor() ([]byte, []int) {
+	return file_pkg_protobuf_catalog_proto_rawDescGZIP(), []int{4}
+}
+
+type GetRootcategoriesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Rootcategories []*Category `protobuf:"bytes,1,rep,name=rootcategories,proto3" json:"rootcategories,omitempty"`
+}
+
+func (x *GetRootcategoriesResponse) Reset() {
+	*x = GetRootcategoriesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pkg_protobuf_catalog_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetRootcategoriesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRootcategoriesResponse) ProtoMessage() {}
+
+func (x *GetRootcategoriesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_pkg_protobuf_catalog_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRootcategoriesResponse.ProtoReflect.Descriptor instead.
+func (*GetRootcategoriesResponse) Descriptor() ([]byte, []int) {
+	return file_pkg_protobuf_catalog_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetRootcategoriesResponse) GetRootcategories() []*Category {
+	if x != nil {
+		return x.Rootcategories
+	}
+	return nil
+}
+
 var File_pkg_protobuf_catalog_proto protoreflect.FileDescriptor
 
 var file_pkg_protobuf_catalog_proto_rawDesc = []byte{
@@ -207,15 +372,36 @@ var file_pkg_protobuf_catalog_proto_rawDesc = []byte{
 	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
 	0x2e, 0x4e, 0x61, 0x76, 0x69, 0x67, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x74, 0x65, 0x6d, 0x52,
 	0x0f, 0x6e, 0x61, 0x76, 0x69, 0x67, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x74, 0x65, 0x6d, 0x73,
-	0x32, 0x6c, 0x0a, 0x07, 0x43, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x12, 0x61, 0x0a, 0x12, 0x47,
-	0x65, 0x74, 0x4e, 0x61, 0x76, 0x69, 0x67, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x74, 0x65, 0x6d,
-	0x73, 0x12, 0x23, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x47, 0x65, 0x74,
-	0x4e, 0x61, 0x76, 0x69, 0x67, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x22, 0x7d, 0x0a, 0x08, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x12, 0x18, 0x0a, 0x07,
+	0x61, 0x72, 0x74, 0x69, 0x63, 0x75, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x61,
+	0x72, 0x74, 0x69, 0x63, 0x75, 0x6c, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61,
+	0x74, 0x68, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x70, 0x61, 0x74, 0x68, 0x12, 0x12,
+	0x0a, 0x04, 0x6c, 0x69, 0x6e, 0x6b, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6c, 0x69,
+	0x6e, 0x6b, 0x12, 0x1b, 0x0a, 0x09, 0x66, 0x75, 0x6c, 0x6c, 0x5f, 0x6c, 0x69, 0x6e, 0x6b, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x66, 0x75, 0x6c, 0x6c, 0x4c, 0x69, 0x6e, 0x6b, 0x22,
+	0x1a, 0x0a, 0x18, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6f, 0x74, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f,
+	0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x57, 0x0a, 0x19, 0x47,
+	0x65, 0x74, 0x52, 0x6f, 0x6f, 0x74, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x0e, 0x72, 0x6f, 0x6f, 0x74,
+	0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x12, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x43, 0x61, 0x74, 0x65,
+	0x67, 0x6f, 0x72, 0x79, 0x52, 0x0e, 0x72, 0x6f, 0x6f, 0x74, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f,
+	0x72, 0x69, 0x65, 0x73, 0x32, 0xcc, 0x01, 0x0a, 0x07, 0x43, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67,
+	0x12, 0x61, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x4e, 0x61, 0x76, 0x69, 0x67, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x23, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
 	0x66, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x61, 0x76, 0x69, 0x67, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49,
-	0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0c,
-	0x5a, 0x0a, 0x2e, 0x3b, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x47, 0x65, 0x74, 0x4e, 0x61, 0x76, 0x69, 0x67, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x5e, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6f, 0x74, 0x63, 0x61,
+	0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x12, 0x22, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6f, 0x74, 0x63, 0x61, 0x74, 0x65, 0x67,
+	0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6f, 0x74, 0x63,
+	0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x42, 0x0c, 0x5a, 0x0a, 0x2e, 0x3b, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -230,22 +416,28 @@ func file_pkg_protobuf_catalog_proto_rawDescGZIP() []byte {
 	return file_pkg_protobuf_catalog_proto_rawDescData
 }
 
-var file_pkg_protobuf_catalog_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_pkg_protobuf_catalog_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_pkg_protobuf_catalog_proto_goTypes = []interface{}{
 	(*NavigationItem)(nil),             // 0: protobuf.NavigationItem
 	(*GetNavigationItemsRequest)(nil),  // 1: protobuf.GetNavigationItemsRequest
 	(*GetNavigationItemsResponse)(nil), // 2: protobuf.GetNavigationItemsResponse
+	(*Category)(nil),                   // 3: protobuf.Category
+	(*GetRootcategoriesRequest)(nil),   // 4: protobuf.GetRootcategoriesRequest
+	(*GetRootcategoriesResponse)(nil),  // 5: protobuf.GetRootcategoriesResponse
 }
 var file_pkg_protobuf_catalog_proto_depIdxs = []int32{
 	0, // 0: protobuf.NavigationItem.items:type_name -> protobuf.NavigationItem
 	0, // 1: protobuf.GetNavigationItemsResponse.navigation_items:type_name -> protobuf.NavigationItem
-	1, // 2: protobuf.Catalog.GetNavigationItems:input_type -> protobuf.GetNavigationItemsRequest
-	2, // 3: protobuf.Catalog.GetNavigationItems:output_type -> protobuf.GetNavigationItemsResponse
-	3, // [3:4] is the sub-list for method output_type
-	2, // [2:3] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	3, // 2: protobuf.GetRootcategoriesResponse.rootcategories:type_name -> protobuf.Category
+	1, // 3: protobuf.Catalog.GetNavigationItems:input_type -> protobuf.GetNavigationItemsRequest
+	4, // 4: protobuf.Catalog.GetRootcategories:input_type -> protobuf.GetRootcategoriesRequest
+	2, // 5: protobuf.Catalog.GetNavigationItems:output_type -> protobuf.GetNavigationItemsResponse
+	5, // 6: protobuf.Catalog.GetRootcategories:output_type -> protobuf.GetRootcategoriesResponse
+	5, // [5:7] is the sub-list for method output_type
+	3, // [3:5] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_pkg_protobuf_catalog_proto_init() }
@@ -290,6 +482,42 @@ func file_pkg_protobuf_catalog_proto_init() {
 				return nil
 			}
 		}
+		file_pkg_protobuf_catalog_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Category); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pkg_protobuf_catalog_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetRootcategoriesRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pkg_protobuf_catalog_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetRootcategoriesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -297,7 +525,7 @@ func file_pkg_protobuf_catalog_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_pkg_protobuf_catalog_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -324,6 +552,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type CatalogClient interface {
 	GetNavigationItems(ctx context.Context, in *GetNavigationItemsRequest, opts ...grpc.CallOption) (*GetNavigationItemsResponse, error)
+	GetRootcategories(ctx context.Context, in *GetRootcategoriesRequest, opts ...grpc.CallOption) (*GetRootcategoriesResponse, error)
 }
 
 type catalogClient struct {
@@ -343,9 +572,19 @@ func (c *catalogClient) GetNavigationItems(ctx context.Context, in *GetNavigatio
 	return out, nil
 }
 
+func (c *catalogClient) GetRootcategories(ctx context.Context, in *GetRootcategoriesRequest, opts ...grpc.CallOption) (*GetRootcategoriesResponse, error) {
+	out := new(GetRootcategoriesResponse)
+	err := c.cc.Invoke(ctx, "/protobuf.Catalog/GetRootcategories", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CatalogServer is the server API for Catalog service.
 type CatalogServer interface {
 	GetNavigationItems(context.Context, *GetNavigationItemsRequest) (*GetNavigationItemsResponse, error)
+	GetRootcategories(context.Context, *GetRootcategoriesRequest) (*GetRootcategoriesResponse, error)
 }
 
 // UnimplementedCatalogServer can be embedded to have forward compatible implementations.
@@ -354,6 +593,9 @@ type UnimplementedCatalogServer struct {
 
 func (*UnimplementedCatalogServer) GetNavigationItems(context.Context, *GetNavigationItemsRequest) (*GetNavigationItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNavigationItems not implemented")
+}
+func (*UnimplementedCatalogServer) GetRootcategories(context.Context, *GetRootcategoriesRequest) (*GetRootcategoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRootcategories not implemented")
 }
 
 func RegisterCatalogServer(s *grpc.Server, srv CatalogServer) {
@@ -378,6 +620,24 @@ func _Catalog_GetNavigationItems_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Catalog_GetRootcategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRootcategoriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CatalogServer).GetRootcategories(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/protobuf.Catalog/GetRootcategories",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CatalogServer).GetRootcategories(ctx, req.(*GetRootcategoriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Catalog_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "protobuf.Catalog",
 	HandlerType: (*CatalogServer)(nil),
@@ -385,6 +645,10 @@ var _Catalog_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetNavigationItems",
 			Handler:    _Catalog_GetNavigationItems_Handler,
+		},
+		{
+			MethodName: "GetRootcategories",
+			Handler:    _Catalog_GetRootcategories_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

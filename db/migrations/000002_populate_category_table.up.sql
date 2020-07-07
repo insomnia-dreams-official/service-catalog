@@ -13,7 +13,7 @@ INSERT INTO category (articul, name, path, link, full_link) VALUES ('00008842', 
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000049', 'Туалетная бумага', '1.5', 'tualetnaja_bumaga', 'bumazhnaja_produktsija/tualetnaja_bumaga');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000208', 'Ценники', '1.6', 'tsenniki', 'bumazhnaja_produktsija/tsenniki');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000177', 'Чековая лента', '1.7', 'chekovaja_lenta', 'bumazhnaja_produktsija/chekovaja_lenta');
-INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000374', 'Бытовая химия оптом', '2', 'bytovaja_ximija_optom', 'bytovaja_ximija_optom');
+INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000374', 'Бытовая химия', '2', 'bytovaja_ximija_optom', 'bytovaja_ximija_optom');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000634', 'Антистатик', '2.1', 'antistatik', 'bytovaja_ximija_optom/antistatik');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00025019', 'Бальзамы для волос', '2.2', 'balzamy_dlya_volos', 'bytovaja_ximija_optom/balzamy_dlya_volos');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00024946', 'Бальзам для волос "Dove"', '2.2.1', 'balzam_dlya_volos_dove', 'bytovaja_ximija_optom/balzamy_dlya_volos/balzam_dlya_volos_dove');
@@ -187,7 +187,7 @@ INSERT INTO category (articul, name, path, link, full_link) VALUES ('00008128', 
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00008129', 'Шампунь "H&Sh"', '2.30.3', 'shampun_hsh', 'bytovaja_ximija_optom/shampuni_dlya_volos/shampun_hsh');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00008122', 'Шампунь "Timotei"', '2.30.4', 'shampun_timotei', 'bytovaja_ximija_optom/shampuni_dlya_volos/shampun_timotei');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00009707', 'Шампунь "Чистая линия"', '2.30.5', 'shampun_chistaya_liniya', 'bytovaja_ximija_optom/shampuni_dlya_volos/shampun_chistaya_liniya');
-INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000153', 'Канцелярские товары, школьные принадлежности', '3', 'kantseljarskie_tovary_shkolnye_prinadlezhnosti', 'kantseljarskie_tovary_shkolnye_prinadlezhnosti');
+INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000153', 'Канцелярские товары', '3', 'kantseljarskie_tovary_shkolnye_prinadlezhnosti', 'kantseljarskie_tovary_shkolnye_prinadlezhnosti');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00012875', 'Маркеры и текстовыделители', '3.1', 'markery_i_tekstovydeliteli', 'kantseljarskie_tovary_shkolnye_prinadlezhnosti/markery_i_tekstovydeliteli');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00012882', 'Файлы-вкладыши', '3.2', 'faily_vkladishy', 'kantseljarskie_tovary_shkolnye_prinadlezhnosti/faily_vkladishy');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000003', 'Одноразовая посуда', '4', 'odnorazovaja_posuda_optom_tseny_kontejnery_dlja_pischevyx_produktov_stakany_odnorazovye', 'odnorazovaja_posuda_optom_tseny_kontejnery_dlja_pischevyx_produktov_stakany_odnorazovye');
@@ -206,7 +206,7 @@ INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000862', 
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00012961', 'Барные аксессуары', '5.1', 'barnye_aksessuary', 'ukrashenie_dlja_stola/barnye_aksessuary');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00012960', 'Зубочистки', '5.2', 'zubochistki', 'ukrashenie_dlja_stola/zubochistki');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00012966', 'Шпажки для шашлыка', '5.3', 'shpazhki_dlya_shashlyka', 'ukrashenie_dlja_stola/shpazhki_dlya_shashlyka');
-INSERT INTO category (articul, name, path, link, full_link) VALUES ('00003737', 'Упаковочные материалы, полиэтиленовые пакеты', '6', 'upakovochnye_materialy_polietilenovye_pakety', 'upakovochnye_materialy_polietilenovye_pakety');
+INSERT INTO category (articul, name, path, link, full_link) VALUES ('00003737', 'Упаковочные материалы', '6', 'upakovochnye_materialy_polietilenovye_pakety', 'upakovochnye_materialy_polietilenovye_pakety');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000325', 'Гриппер', '6.1', 'gripper', 'upakovochnye_materialy_polietilenovye_pakety/gripper');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000126', 'Мешки для мусора', '6.2', 'meshki_dlja_musora', 'upakovochnye_materialy_polietilenovye_pakety/meshki_dlja_musora');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00010559', 'Мешок для строительного мусора', '6.3', 'meshki_dlya_stroitelnogo_musora', 'upakovochnye_materialy_polietilenovye_pakety/meshki_dlya_stroitelnogo_musora');
@@ -218,7 +218,7 @@ INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000334', 
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000113', 'Пленка пищевая', '6.7', 'plenka_pishevaya', 'upakovochnye_materialy_polietilenovye_pakety/plenka_pishevaya');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000316', 'Скотч', '6.8', 'skotch', 'upakovochnye_materialy_polietilenovye_pakety/skotch');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000120', 'Стрейч-пленка', '6.9', 'strejch-plenka', 'upakovochnye_materialy_polietilenovye_pakety/strejch-plenka');
-INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000236', 'Хозяйственные товары для дома оптом', '7', 'xozjajstvennye_tovary_dlja_doma_optom', 'xozjajstvennye_tovary_dlja_doma_optom');
+INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000236', 'Хозяйственные товары', '7', 'xozjajstvennye_tovary_dlja_doma_optom', 'xozjajstvennye_tovary_dlja_doma_optom');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00001167', 'Батарейки', '7.1', 'batareyki', 'xozjajstvennye_tovary_dlja_doma_optom/batareyki');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00011857', 'Батарейка "PANASONIC"', '7.1.1', 'batareyka_panasonic', 'xozjajstvennye_tovary_dlja_doma_optom/batareyki/batareyka_panasonic');
 INSERT INTO category (articul, name, path, link, full_link) VALUES ('00000364', 'Ватные диски, ватные палочки', '7.2', 'vatnye_diski_vatnye_palochki', 'xozjajstvennye_tovary_dlja_doma_optom/vatnye_diski_vatnye_palochki');

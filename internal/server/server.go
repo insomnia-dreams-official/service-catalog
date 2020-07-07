@@ -55,9 +55,10 @@ func New(db *sql.DB) Server {
 
 	// Create usecases
 	navigationUcase := ucase.NewNavigationUcase(categoryRepo)
+	categoryUcase := ucase.NewCategoryUcase(categoryRepo)
 
 	// Inject ucases in out grpc server
-	delivery_grpc.Register(grpcServer, navigationUcase)
+	delivery_grpc.Register(grpcServer, navigationUcase, categoryUcase)
 	return Server{grpcServer}
 }
 

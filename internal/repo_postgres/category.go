@@ -14,8 +14,8 @@ func NewCategoryRepo(db *sql.DB) catalog.CategoryRepo {
 }
 
 // FindForNavigation returns categories with path level 1 and 2; example "1" or "1.1"
-func (r *categoryRepository) FindForNavigation() ([]catalog.Category, error) {
-	var categories []catalog.Category
+func (r *categoryRepository) FindForNavigation() ([]*catalog.Category, error) {
+	var categories []*catalog.Category
 
 	rows, err := r.db.Query(`
 		SELECT articul, name, path, link, full_link
@@ -34,7 +34,7 @@ func (r *categoryRepository) FindForNavigation() ([]catalog.Category, error) {
 		if err != nil {
 			return nil, err
 		}
-		categories = append(categories, c)
+		categories = append(categories, &c)
 	}
 
 	err = rows.Err()
@@ -44,3 +44,35 @@ func (r *categoryRepository) FindForNavigation() ([]catalog.Category, error) {
 
 	return categories, nil
 }
+
+// GetRootcategories method returns categories with path level 1; example: "1", "2"...
+func (r *categoryRepository) GetRootcategories() ([]*catalog.Category, error) {
+	var categories []*catalog.Category
+
+	rows, err := r.db.Query(`
+		SELECT articul, name, path, link, full_link
+		FROM category
+		WHERE path SIMILAR TO '\d*';
+	`)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		c := catalog.Category{}
+		err := rows.Scan(&c.Articul, &c.Name, &c.Path, &c.Link, &c.FullLink)
+		if err != nil {
+			return nil, err
+		}
+		categories = append(categories, &c)
+	}
+
+	err = rows.Err()
+	if err != nil {
+		return nil, err
+	}
+
+	return categories, nil
+}
+

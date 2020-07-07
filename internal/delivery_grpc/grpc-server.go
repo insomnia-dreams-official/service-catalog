@@ -8,13 +8,15 @@ import (
 )
 
 type grpcServer struct {
-	//pb.UnimplementedCatalogServer
 	navigationUcase catalog.NavigationUcase
+	categoryUcase   catalog.CategoryUcase
 }
 
-func Register(gs *grpc.Server, navigationUcase catalog.NavigationUcase) { // todo: think how to create function with rest/spread
+// todo: think how to create function with rest/spread
+func Register(gs *grpc.Server, navigationUcase catalog.NavigationUcase, categoryUcase catalog.CategoryUcase) {
 	pb.RegisterCatalogServer(gs, &grpcServer{
 		navigationUcase,
+		categoryUcase,
 	})
 	reflection.Register(gs)
 }
