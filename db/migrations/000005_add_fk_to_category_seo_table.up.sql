@@ -1,8 +1,9 @@
-DO $$
+DO
+$$
     BEGIN
-        IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'fk_category_seo_to_category') THEN
+        IF NOT EXISTS(SELECT 1 FROM pg_constraint WHERE conname = 'category_seo_category_articul_fkey') THEN
             ALTER TABLE category_seo
-                ADD CONSTRAINT fk_category_seo_to_category
+                ADD CONSTRAINT category_seo_category_articul_fkey
                     FOREIGN KEY (category_articul) REFERENCES category (articul)
                         ON DELETE NO ACTION
                         ON UPDATE NO ACTION

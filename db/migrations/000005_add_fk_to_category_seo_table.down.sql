@@ -1,2 +1,2 @@
 ALTER TABLE category_seo
-    DROP CONSTRAINT IF EXISTS fk_category_seo_to_category;
+    DROP CONSTRAINT IF EXISTS category_seo_category_articul_fkey;
