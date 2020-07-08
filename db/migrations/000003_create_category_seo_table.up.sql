@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS "category_seo"
+CREATE TABLE IF NOT EXISTS category_seo
 (
     category_articul CHAR(8) PRIMARY KEY,
     trans_link       VARCHAR(200),

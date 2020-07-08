@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS "category_seo";
+DROP TABLE IF EXISTS category_seo;
